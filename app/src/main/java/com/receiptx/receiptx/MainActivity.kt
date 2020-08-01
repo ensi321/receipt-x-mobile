@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        findViewById<FloatingActionButton>(R.id.add_receipt_btn).setOnClickListener { view ->
+            Snackbar.make(view, "Add receipt", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
     }
