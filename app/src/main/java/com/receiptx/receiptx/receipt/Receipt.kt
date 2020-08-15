@@ -1,9 +1,9 @@
 package com.receiptx.receiptx.receipt
 
 import com.receiptx.receiptx.product.Product
-import java.util.Date
+import java.time.LocalDate
 
 data class Receipt(
     val id: Int,
-    val issueDate: Date,
+    val issueDate: LocalDate,
     val productList: List<Product>)
