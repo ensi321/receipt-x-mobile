@@ -2,45 +2,47 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="24dp">
+    android:layout_height="100dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="5dp">
 
 
-    <TextView
-        android:id="@+id/receipt_id_holder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-1"
-        android:textSize="12pt"
-        android:paddingStart="32dp"
-        android:paddingTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
+    <ImageView
+        android:id="@+id/merchant_pic_holder"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/merchant_1"
+        android:contentDescription="Logo for the merchant"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         />
 
     <TextView
-        android:id="@+id/issue_date_holder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2020-08-20"
-        android:textSize="12pt"
-        android:paddingTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/num_product_holder"
-        app:layout_constraintStart_toEndOf="@+id/receipt_id_holder"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/description_holder"
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Some description \n of the receipt"
+        android:textSize="8pt"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/total_amount_holder"
+        app:layout_constraintStart_toEndOf="@+id/merchant_pic_holder"
+        />
 
     <TextView
-        android:id="@+id/num_product_holder"
+        android:id="@+id/total_amount_holder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="no item"
-        android:textSize="12pt"
-        android:paddingRight="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="$12.34"
+        android:textSize="10pt"
+        android:gravity="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

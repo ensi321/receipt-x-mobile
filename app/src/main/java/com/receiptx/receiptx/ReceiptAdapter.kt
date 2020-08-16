@@ -1,13 +1,12 @@
 package com.receiptx.receiptx
 
-import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.receiptx.receiptx.receipt.Receipt
-import java.text.SimpleDateFormat
 
 class ReceiptAdapter(private val receipts: List<Receipt>) :
     RecyclerView.Adapter<ReceiptAdapter.ViewHolder>() {
@@ -15,11 +14,12 @@ class ReceiptAdapter(private val receipts: List<Receipt>) :
     class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(receipt: Receipt) {
-            view.findViewById<TextView>(R.id.receipt_id_holder).text = "${receipt.id}"
-            view.findViewById<TextView>(R.id.num_product_holder).text = "${receipt.productList.size}"
+            val resources = view.context.resources
 
-            d("receipt adapter","${receipt.issueDate}")
-            view.findViewById<TextView>(R.id.issue_date_holder).text = "${receipt.issueDate}"
+            view.findViewById<TextView>(R.id.description_holder).text = receipt.generateDescriptionText()
+            view.findViewById<TextView>(R.id.total_amount_holder).text = resources.getString(R.string.prefix_dollar, receipt.totalAmount)
+            view.findViewById<ImageView>(R.id.merchant_pic_holder)
+                .setImageResource(resources.getIdentifier("merchant_${receipt.merchantId}", "drawable", view.context.packageName))
 
         }
     }
