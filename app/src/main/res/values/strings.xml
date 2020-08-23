@@ -12,4 +12,5 @@
 
 
     <string name="prefix_dollar">\u0024%1$.2f</string>
+    <string name="title_activity_receipt">ReceiptActivity</string>
 </resources>

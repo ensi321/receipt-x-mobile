@@ -7,20 +7,36 @@
 
     <fragment
         android:id="@+id/ReceiptListFragment"
-        android:name="com.receiptx.receiptx.ReceiptListFragment"
+        android:name="com.receiptx.receiptx.receipt.ReceiptListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/receipt_list">
-
-        <action
-            android:id="@+id/action_ReceiptListFragment_to_ReceiptInfo"
-            app:destination="@id/ReceiptInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/ReceiptInfoFragment"
-        android:name="com.receiptx.receiptx.ReceiptInfo"
+        android:name="com.receiptx.receiptx.receipt.ReceiptInfo"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/receipt_info">
 
+    </fragment>
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.receiptx.receiptx.receipt.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.receiptx.receiptx.receipt.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
 
 
