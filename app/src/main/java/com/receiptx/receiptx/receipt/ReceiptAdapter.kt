@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.receiptx.receiptx.R
 import java.io.Serializable
@@ -20,13 +21,9 @@ class ReceiptAdapter(private val receipts: List<Receipt>, private val activity: 
         fun bind(receipt: Receipt) {
             val resources = view.context.resources
             view.setOnClickListener {
-                Log.i("LOG_INFO", "Switching to Receipt Activity")
-                val myIntent = Intent(activity, ReceiptActivity::class.java)
-                myIntent.putExtra("receipt", "value")
+                val action = ReceiptListFragmentDirections.actionFirstFragmentToProductInfo(receipt)
+                view.findNavController().navigate(action)
 
-                // TODO Uncomment below after implementing Receipt serialization : https://github.com/naviechan/receipt-x-mobile/issues/8
-                // myIntent.putExtra("receipt", receipt as Serializable)
-                activity.startActivity(myIntent)
             }
             view.findViewById<TextView>(R.id.description_holder).text = receipt.generateDescriptionText()
             view.findViewById<TextView>(R.id.total_amount_holder).text = resources.getString(R.string.prefix_dollar, receipt.totalAmount)
