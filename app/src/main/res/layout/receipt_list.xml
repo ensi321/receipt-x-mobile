@@ -11,6 +11,8 @@
         android:id="@+id/ReceiptListRecylerView"
         android:layout_width="409dp"
         android:layout_height="729dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

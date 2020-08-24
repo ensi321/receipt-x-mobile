@@ -38,7 +38,7 @@ class ReceiptListFragment : Fragment() {
                     Product(1, 1, "002", LocalDate.of(2023, 8, 20)),
                     Product(1, 1, "002", LocalDate.of(2024, 8, 20))
                 )),
-            Receipt(1, LocalDate.of( 2020 , 8 , 20 ), 4, 12.34,
+            Receipt(1, LocalDate.of( 2020 , 8 , 20 ), 4, 13.78,
                 listOf(Product(1, 1, "000", LocalDate.of(2023, 8, 20)))),
             Receipt(2, LocalDate.of( 2020 , 8 , 21 ), 2, 13.56,
                 listOf(Product(1, 1, "001", LocalDate.of(2023, 8, 20)))),
