@@ -22,7 +22,14 @@ class ReceiptFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dummy_receipt_holder.text = args.receiptArg.toString()
+        val receipt = args.receiptArg
+
+        val image = resources.getIdentifier("merchant_${receipt.merchantId}", "drawable", view.context.packageName)
+        businessImage.setImageResource(image)
+
+        totalAmount.text = "$${receipt.totalAmount}"
+
+        receiptDate.text = receipt.issueDate.toString()
 
     }
 
