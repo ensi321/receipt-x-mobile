@@ -1,11 +1,14 @@
 package com.receiptx.receiptx
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.receiptx.receiptx.receipt.Receipt
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,8 +18,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         findViewById<FloatingActionButton>(R.id.add_receipt_btn).setOnClickListener { view ->
-            Snackbar.make(view, "Add receipt", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+            val intent = Intent(view.context, QRScanner::class.java)
+
+            startActivityForResult(intent, 1)
         }
     }
 
@@ -35,4 +39,23 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 1){
+            if (resultCode == Activity.RESULT_OK){
+                val rawReceiptData: String? = data?.getStringExtra("rawReceiptData")
+
+                if (rawReceiptData != null){
+                    val receipt : Receipt = Receipt.parseRawData(rawReceiptData)
+                    ReceiptListFragment.receiptItems.add(receipt)
+                    finish()
+                    startActivity(intent)
+                }
+            }
+        }
+
+    }
+
 }
