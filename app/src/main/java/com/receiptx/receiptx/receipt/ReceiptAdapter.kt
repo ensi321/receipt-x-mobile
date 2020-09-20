@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.receiptx.receiptx.R
 import com.receiptx.receiptx.receipt.ReceiptListFragmentDirections
 
+
 class ReceiptAdapter(private val receipts: List<Receipt>) :
     RecyclerView.Adapter<ReceiptAdapter.ViewHolder>() {
 
