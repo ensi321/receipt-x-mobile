@@ -2,6 +2,7 @@ package com.receiptx.receiptx.receipt
 
 import android.util.Log
 import com.receiptx.receiptx.product.Product
+import java.io.Serializable
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -10,7 +11,7 @@ data class Receipt(
     var issueDate: LocalDate = LocalDate.now(),
     var merchantId: Int = -1,
     var totalAmount: Double = -1.0,
-    var productList: List<Product> = emptyList()){
+    var productList: List<Product> = emptyList() ) : Serializable {
 
     fun generateDescriptionText(): String {
         val dateText = "Issued on ${issueDate}"

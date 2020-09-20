@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_ReceiptListFragment_to_ReceiptInfo"
             app:destination="@id/ReceiptInfoFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_productInfo"
+            app:destination="@id/ReceiptFragment" />
     </fragment>
     <fragment
         android:id="@+id/ReceiptInfoFragment"
@@ -21,6 +24,18 @@
         android:label="@string/second_fragment_label"
         tools:layout="@layout/receipt_info">
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/ReceiptFragment"
+        android:name="com.receiptx.receiptx.receipt.ReceiptFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/receipt">
+
+
+        <argument
+            android:name="receiptArg"
+            app:argType="com.receiptx.receiptx.receipt.Receipt" />
     </fragment>
 
 
