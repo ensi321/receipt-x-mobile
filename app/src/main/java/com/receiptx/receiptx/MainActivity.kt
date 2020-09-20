@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
                 if (rawReceiptData != null){
                     val receipt : Receipt = Receipt.parseRawData(rawReceiptData)
-                    ReceiptListFragment.receiptItems.add(receipt)
+                    ReceiptListFragment.receiptItems.add(0, receipt)
                     finish()
                     startActivity(intent)
                 }
