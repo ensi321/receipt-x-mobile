@@ -1,4 +1,4 @@
-package com.receiptx.receiptx
+package com.receiptx.receiptx.receipt
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.receiptx.receiptx.receipt.Receipt
-import com.receiptx.receiptx.ReceiptListFragmentDirections
+import com.receiptx.receiptx.R
+import com.receiptx.receiptx.receipt.ReceiptListFragmentDirections
 
 class ReceiptAdapter(private val receipts: List<Receipt>) :
     RecyclerView.Adapter<ReceiptAdapter.ViewHolder>() {
@@ -24,7 +24,8 @@ class ReceiptAdapter(private val receipts: List<Receipt>) :
 
             }
             view.findViewById<TextView>(R.id.description_holder).text = receipt.generateDescriptionText()
-            view.findViewById<TextView>(R.id.total_amount_holder).text = resources.getString(R.string.prefix_dollar, receipt.totalAmount)
+            view.findViewById<TextView>(R.id.total_amount_holder).text = resources.getString(
+                R.string.prefix_dollar, receipt.totalAmount)
             view.findViewById<ImageView>(R.id.merchant_pic_holder)
                 .setImageResource(resources.getIdentifier("merchant_${receipt.merchantId}", "drawable", view.context.packageName))
 

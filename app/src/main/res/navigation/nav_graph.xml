@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/ReceiptListFragment"
-        android:name="com.receiptx.receiptx.ReceiptListFragment"
+        android:name="com.receiptx.receiptx.receipt.ReceiptListFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/receipt_list">
 
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/ReceiptInfoFragment"
-        android:name="com.receiptx.receiptx.ReceiptInfo"
+        android:name="com.receiptx.receiptx.receipt.ReceiptInfoRowFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/receipt_info">
 

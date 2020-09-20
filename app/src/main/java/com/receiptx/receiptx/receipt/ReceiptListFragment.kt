@@ -1,4 +1,4 @@
-package com.receiptx.receiptx
+package com.receiptx.receiptx.receipt
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.receiptx.receiptx.R
 import com.receiptx.receiptx.product.Product
-import com.receiptx.receiptx.receipt.Receipt
 import java.time.LocalDate
 
 /**
@@ -71,7 +71,8 @@ class ReceiptListFragment : Fragment() {
 
         view.findViewById<RecyclerView>(R.id.ReceiptListRecylerView).apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ReceiptAdapter(receiptItems)
+            adapter =
+                ReceiptAdapter(receiptItems)
         }
 
     }
