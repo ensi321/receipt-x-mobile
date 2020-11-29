@@ -33,7 +33,7 @@
         android:id="@+id/receipt_date_holder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jun 1, 2020 14:32:21"
+        android:text="Aug 21, 2020 14:32:21"
         android:textSize="8pt"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +106,8 @@
             android:layout_marginBottom="10dp">
             <TextView
                 android:layout_column="0"
-                android:text="AAA Battery (pack of 3)" />
+                android:text="AAA Battery (pack of 3)"
+                android:drawableEnd="@drawable/brown_dot"/>
             <TextView
                 android:layout_column="1"
                 android:gravity="center_horizontal|top"
@@ -122,7 +123,8 @@
             android:layout_marginBottom="10dp">
             <TextView
                 android:layout_column="0"
-                android:text="Iphone 12 (Space gray 128GB)" />
+                android:text="Iphone 12 (Space gray 128GB)"
+                android:drawableEnd="@drawable/green_dot"/>
             <TextView
                 android:layout_column="1"
                 android:gravity="center_horizontal|top"
@@ -153,7 +155,7 @@
                 />
             <TextView
                 android:layout_column="2"
-                android:text="$212.5"
+                android:text="$212.35"
                 android:padding="10dip" />
         </TableRow>
 
@@ -198,6 +200,49 @@
         android:layout_marginTop="10dp"
         android:background="#c0c0c0"
         app:layout_constraintTop_toBottomOf="@+id/receipt_number_holder" />
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/indicator_explanation"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line_2"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp">
+
+        <TableRow>
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_column="0"
+                android:paddingHorizontal="50dp"
+                android:paddingVertical="10dp"
+                android:src="@drawable/brown_dot" />
+            <TextView
+                android:layout_column="1"
+                android:text="Refundable under certain condition \nNo wrranty coverage" />
+        </TableRow>
+
+        <TableRow>
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_column="0"
+                android:paddingHorizontal="50dp"
+                android:paddingVertical="10dp"
+                android:src="@drawable/green_dot" />
+            <TextView
+                android:layout_column="1"
+                android:text="Refundable under certain condition \nWarranty available" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <View
+        android:id="@+id/horizontal_line_3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#c0c0c0"
+        app:layout_constraintTop_toBottomOf="@+id/indicator_explanation" />
 
     <Button
         android:id="@+id/export_button"
@@ -210,7 +255,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/locate_store_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_line_2" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line_3" />
 
     <Button
         android:id="@+id/locate_store_button"
@@ -223,7 +268,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_line_2" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line_3" />
 
     <Button
         android:id="@+id/call_store_button"
@@ -236,7 +281,7 @@
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/locate_store_button"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_line_2" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line_3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

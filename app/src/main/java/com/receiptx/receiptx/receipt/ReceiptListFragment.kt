@@ -20,8 +20,11 @@ class ReceiptListFragment : Fragment() {
         var receiptItems : MutableList<Receipt> = mutableListOf(
             Receipt(1, LocalDate.of( 2020 , 8 , 20 ), 1, 12.34,
                 listOf(Product(1, 1, "000", LocalDate.of(2023, 8, 20)))),
-            Receipt(2, LocalDate.of( 2020 , 8 , 21 ), 2, 13.56,
-                listOf(Product(1, 1, "001", LocalDate.of(2023, 8, 20)))),
+            Receipt(2, LocalDate.of( 2020 , 8 , 21 ), 2, 222.35,
+                listOf(
+                    Product(1, 1, "002", LocalDate.of(2023, 8, 20)),
+                    Product(1, 1, "002", LocalDate.of(2024, 8, 20))
+                )),
             Receipt(3, LocalDate.of( 2020 , 8 , 22 ), 3, 12.34,
                 listOf(
                     Product(1, 1, "002", LocalDate.of(2023, 8, 20)),
